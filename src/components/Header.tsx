@@ -1,4 +1,4 @@
-export const Footer: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <header>
       {/* Logo */}
