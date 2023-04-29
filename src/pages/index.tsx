@@ -26,7 +26,7 @@ export default Home;
 const Hero = () => {
   return (
     <>
-      <h1 className="font-extrabold text-black">Sunrise</h1>
+      <h1 className="font-extrabold text-black">Sunrise Software</h1>
       <p className="leading-relaxed text-black">
         Creating software that looks and works great is our specialty at
         Sunrise. Our team of experts combines artistry and technical know-how to
