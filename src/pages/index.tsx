@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Web from "../../public/icons/web.svg";
 import Mobile from "../../public/icons/mobile.svg";
-import Design from "../../public/icons/design.svg";
+// import Design from "../../public/icons/design.svg";
 
 const Home: NextPage = () => {
   return (
@@ -42,21 +42,24 @@ const Services = () => {
   const Services = [
     {
       id: 1,
-      icon: `${Web}`,
+      icon: "web.svg",
+      borderColor: "#F4A261",
       title: "Websites",
       description:
         "Fast. Responsive. Accessible. We specialize in building high-performing websites without leaving any users behind. ",
     },
     {
       id: 2,
-      icon: `${Mobile}`,
+      icon: "mobile.svg",
+      borderColor: "#2A9D8F",
       title: "Mobile Apps",
       description:
         "We build cross-platform mobile apps. Lorem ipsum dolor sit amet consectetur adipiscing elit.",
     },
     {
       id: 3,
-      icon: `${Design}`,
+      icon: "design.svg",
+      borderColor: "#E76F51",
       title: "UI/UX Design",
       description:
         "First impressions matter. We know how to craft unique and impressive digital experiences.",
@@ -64,16 +67,20 @@ const Services = () => {
   ];
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto my-10">
       <div>
-        <h2>What we can do for you</h2>
+        <h2 className="text-[40px] font-extrabold">What we can do for you</h2>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-col sm:flex-col md:flex-row">
         {Services.map((data) => (
-          <div>
-            <img src={data.icon} alt="service-icon" />
-            <h3 className="text-3xl">{data.title}</h3>
-            <p>{data.description}</p>
+          <div
+            key={data.id}
+            className="my-2 flex  w-1/3 flex-col items-center justify-start"
+          >
+            <img src={`icons/${data.icon}`} alt="service-icon" />
+            <h3 className="text-[40px] font-semibold">{data.title}</h3>
+            <div className={`my-5 w-1/2 border-2 border-[#000]`} />
+            <p className="w-1/2 text-center">{data.description}</p>
           </div>
         ))}
       </div>
@@ -83,3 +90,5 @@ const Services = () => {
 // const Projects = () => {}
 // const About = () => {}
 // const Contact = () => {}
+
+// const Service: React.FC = () => {}
