@@ -1,5 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Web from "../../public/icons/web.svg";
+import Mobile from "../../public/icons/mobile.svg";
+import Design from "../../public/icons/design.svg";
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <>
         <Hero />
-        {/* <Services /> */}
+        <Services />
         {/* <Projects /> */}
         {/* <About /> */}
         {/* <Contact /> */}
@@ -35,7 +38,48 @@ const Hero = () => {
     </>
   );
 };
-// const Services = () => {}
+const Services = () => {
+  const Services = [
+    {
+      id: 1,
+      icon: `${Web}`,
+      title: "Websites",
+      description:
+        "Fast. Responsive. Accessible. We specialize in building high-performing websites without leaving any users behind. ",
+    },
+    {
+      id: 2,
+      icon: `${Mobile}`,
+      title: "Mobile Apps",
+      description:
+        "We build cross-platform mobile apps. Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+    },
+    {
+      id: 3,
+      icon: `${Design}`,
+      title: "UI/UX Design",
+      description:
+        "First impressions matter. We know how to craft unique and impressive digital experiences.",
+    },
+  ];
+
+  return (
+    <div className="container mx-auto">
+      <div>
+        <h2>What we can do for you</h2>
+      </div>
+      <div className="flex flex-row">
+        {Services.map((data) => (
+          <div>
+            <img src={data.icon} alt="service-icon" />
+            <h3 className="text-3xl">{data.title}</h3>
+            <p>{data.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 // const Projects = () => {}
 // const About = () => {}
 // const Contact = () => {}
