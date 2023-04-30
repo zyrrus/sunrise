@@ -78,9 +78,9 @@ const Services = () => {
             className="my-2 flex  w-1/3 flex-col items-center justify-start"
           >
             <img src={`icons/${data.icon}`} alt="service-icon" />
-            <h3 className="text-[40px] font-semibold">{data.title}</h3>
-            <div className={`my-5 w-1/2 border-2 border-[#000]`} />
-            <p className="w-1/2 text-center">{data.description}</p>
+            <h3 className="text-[32px] font-semibold">{data.title}</h3>
+            <div className={`my-5 w-3/4 border-2 border-[#000]`} />
+            <p className="w-1/2 text-center text-[20px]">{data.description}</p>
           </div>
         ))}
       </div>
