@@ -71,24 +71,28 @@ const Services = () => {
   ];
 
   return (
-    <div className="container mx-auto my-10">
-      <div>
-        <h2 className="text-center text-[32px] font-extrabold sm:text-left sm:text-[40px]">
-          What we can do for you
-        </h2>
-      </div>
-      <div className="flex flex-col sm:flex-col md:flex-row">
-        {Services.map((data) => (
-          <div
-            key={data.id}
-            className="my-2 flex w-full flex-col items-center justify-start sm:w-1/3"
-          >
-            <img src={`icons/${data.icon}`} alt="service-icon" />
-            <h3 className="text-[32px] font-semibold">{data.title}</h3>
-            <div className={`my-5 w-3/4 border-2 ${data.borderColor}`} />
-            <p className="w-3/4 text-center text-[20px] ">{data.description}</p>
-          </div>
-        ))}
+    <div className=" my-10 bg-[#F0D4B2]">
+      <div className="container mx-auto">
+        <div>
+          <h2 className="text-center text-[32px] font-extrabold sm:text-left sm:text-[40px]">
+            What we can do for you
+          </h2>
+        </div>
+        <div className="flex flex-col sm:flex-col md:flex-row">
+          {Services.map((data) => (
+            <div
+              key={data.id}
+              className="my-2 flex w-full flex-col items-center justify-start sm:w-1/3"
+            >
+              <img src={`icons/${data.icon}`} alt="service-icon" />
+              <h3 className="text-[32px] font-semibold">{data.title}</h3>
+              <div className={`my-5 w-3/4 border-2 ${data.borderColor}`} />
+              <p className="w-3/4 text-center text-[20px] ">
+                {data.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
