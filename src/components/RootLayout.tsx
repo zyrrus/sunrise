@@ -10,6 +10,7 @@ const roadster = localFont({
   preload: true,
   variable: "--font-roadster",
 });
+
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "600", "800"],
