@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import { Container } from "~/components/Container";
 import { Polaroid } from "~/components/Polaroid";
 import { ProjectDescription } from "~/components/ProjectDescription";
 import { projects } from "~/constants/projects";
@@ -43,27 +44,32 @@ const Hero = () => {
 
 const Projects = () => {
   return (
-    <div className="container py-20 [&>*:nth-child(odd)]:md:flex-row">
-      {projects.map((p) => (
-        <div
-          key={p.title}
-          className="my-20 flex flex-col items-center gap-x-12 gap-y-6 md:my-0 md:flex-row-reverse"
-        >
-          <div className="">
-            <Polaroid
-              title={p.title}
-              imageSrc={p.imageSrc}
-              rotation={p.rotation}
-            />
+    <Container>
+      <h2 className="text-center text-4xl font-extrabold text-black">
+        Here are some of our past projects
+      </h2>
+      <div className="py-20 [&>*:nth-child(odd)]:md:flex-row">
+        {projects.map((p) => (
+          <div
+            key={p.title}
+            className="my-20 flex flex-col items-center gap-x-12 gap-y-6 md:my-0 md:flex-row-reverse"
+          >
+            <div>
+              <Polaroid
+                title={p.title}
+                imageSrc={p.imageSrc}
+                rotation={p.rotation}
+              />
+            </div>
+            <div>
+              <ProjectDescription title={p.title} color={p.color}>
+                {p.children}
+              </ProjectDescription>
+            </div>
           </div>
-          <div className="">
-            <ProjectDescription title={p.title} color={p.color}>
-              {p.children}
-            </ProjectDescription>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </Container>
   );
 };
 

@@ -12,8 +12,8 @@ export const ProjectDescription: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <div className="max-w-5xl text-black">
-      <h2 className="text-3xl font-semibold">{title}</h2>
+    <div className="max-w-4xl text-black">
+      <h3 className="text-3xl font-semibold">{title}</h3>
       <Separator.Root
         className={`${color} my-2 h-1 w-full rounded-full`}
         decorative

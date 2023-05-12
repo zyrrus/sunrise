@@ -5,7 +5,7 @@ export const projects: Array<PolaroidProps & ProjectDescriptionProps> = [
   {
     title: "Parallel",
     color: "bg-orange",
-    imageSrc: "https://unsplash.com/photos/OqtafYT5kTw",
+    imageSrc: "https://picsum.photos/seed/Parallel/200",
     rotation: "-rotate-12",
     children:
       "We started Parallel to help connect educators with content creators to make it easier to create high-quality educational content for platforms like YouTube. We built the platform with high performance, scalability, and accessibility in mind. That's why we chose powerful tools like Next.js, TailwindCSS, RadixUI, Prisma, PlanetScale, and Vercel's hosting platform. ",
@@ -13,15 +13,15 @@ export const projects: Array<PolaroidProps & ProjectDescriptionProps> = [
   {
     title: "DropNote",
     color: "bg-yellow",
-    imageSrc: "",
+    imageSrc: "https://picsum.photos/seed/DropNote/200",
     rotation: "rotate-6",
     children:
       "We started Parallel to help connect educators with content creators to make it easier to create high-quality educational content for platforms like YouTube. We built the platform with high performance, scalability, and accessibility in mind. That's why we chose powerful tools like Next.js, TailwindCSS, RadixUI, Prisma, PlanetScale, and Vercel's hosting platform. ",
   },
   {
-    title: "Flurry",
+    title: "Flurry Waitlist",
     color: "bg-green",
-    imageSrc: "",
+    imageSrc: "https://picsum.photos/seed/Flurry/200",
     rotation: "-rotate-3",
     children:
       "We started Parallel to help connect educators with content creators to make it easier to create high-quality educational content for platforms like YouTube. We built the platform with high performance, scalability, and accessibility in mind. That's why we chose powerful tools like Next.js, TailwindCSS, RadixUI, Prisma, PlanetScale, and Vercel's hosting platform. ",
