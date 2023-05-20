@@ -15,14 +15,6 @@ const Home: NextPage = () => {
       </Head>
       <>
         <Hero />
-        <div className="">
-          <p className="text-r-3xl">48px: h1</p>
-          <p className="text-r-2xl">40px: h2</p>
-          <p className="text-r-xl">32px: h3</p>
-          <p className="text-r-lg">24px: h4, header, polaroid, button</p>
-          <p className="text-r-base">20px: h5, body</p>
-          <p className="text-r-sm">16px: h6</p>
-        </div>
         {/* <Services /> */}
         <Projects />
         {/* <About /> */}
@@ -53,14 +45,14 @@ const Hero = () => {
 const Projects = () => {
   return (
     <Container>
-      <h2 className="text-center text-4xl font-extrabold text-black">
+      <h2 className="my-10 text-center font-extrabold text-black text-r-2xl md:mt-16">
         Here are some of our past projects
       </h2>
-      <div className="py-20 [&>*:nth-child(odd)]:md:flex-row">
+      <div className="pb-20 [&>*:nth-child(odd)]:md:flex-row">
         {projects.map((p) => (
           <div
             key={p.title}
-            className="my-20 flex flex-col items-center gap-x-12 gap-y-6 md:my-0 md:flex-row-reverse"
+            className="mb-10 flex flex-col items-center gap-x-12 gap-y-6 md:flex-row-reverse lg:my-0"
           >
             <div>
               <Polaroid

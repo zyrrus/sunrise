@@ -39,7 +39,7 @@ export const Polaroid: React.FC<Props> = ({ title, imageSrc, rotation }) => {
             }`}
           />
         </div>
-        <span ref={ref} className="text-2xl font-semibold">
+        <span ref={ref} className="font-semibold text-r-lg">
           {title}
         </span>
       </div>

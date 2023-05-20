@@ -16,7 +16,7 @@ export default {
         padding: "1.5rem",
       },
       fontSize: {
-        xs: ["0.75rem", { lineHeight: "1rem" }], // 12px 0.75rem
+        xs: ["0.875rem", { lineHeight: "1rem" }], // 14px 0.875rem
         sm: ["1rem", { lineHeight: "1.25rem" }], // 16px 1rem
         base: ["1.25rem", { lineHeight: "1.5rem" }], // 20px 1.25rem
         lg: ["1.5rem", { lineHeight: "1.75rem" }], // 24px 1.5rem
