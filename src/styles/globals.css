@@ -1,38 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Responsive typography */
-
-@layer utilities {
-  .text-r-6xl {
-    @apply text-6xl;
-  }
-  .text-r-5xl {
-    @apply text-5xl;
-  }
-  .text-r-4xl {
-    @apply text-4xl;
-  }
-  .text-r-3xl {
-    @apply text-3xl;
-  }
-  .text-r-2xl {
-    @apply text-2xl;
-  }
-  .text-r-xl {
-    @apply text-xl;
-  }
-  .text-r-lg {
-    @apply text-lg;
-  }
-  .text-r-base .text-r-md {
-    @apply text-base;
-  }
-  .text-r-sm {
-    @apply text-sm;
-  }
-  .text-r-xs {
-    @apply text-xs;
-  }
-}
