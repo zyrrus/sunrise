@@ -1,12 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Web from "../../public/icons/web.svg";
-import Mobile from "../../public/icons/mobile.svg";
-// import Design from "../../public/icons/design.svg";
-
-interface BorderProps {
-  color: string;
-}
+import Image from "next/image";
+import { Container } from "~/components/Container";
+import { Polaroid } from "~/components/Polaroid";
+import { ProjectDescription } from "~/components/ProjectDescription";
+import { projects } from "~/constants/projects";
 
 const Home: NextPage = () => {
   return (
@@ -19,7 +17,7 @@ const Home: NextPage = () => {
       <>
         <Hero />
         <Services />
-        {/* <Projects /> */}
+        <Projects />
         {/* <About /> */}
         {/* <Contact /> */}
       </>
@@ -32,8 +30,8 @@ export default Home;
 const Hero = () => {
   return (
     <>
-      <h1 className="py-3 font-roadster text-5xl text-black">Sunrise</h1>
-      <p className="leading-relaxed text-black">
+      <h1 className="py-3 font-roadster text-black text-r-3xl">Sunrise</h1>
+      <p className="leading-relaxed text-black text-r-xl">
         Creating software that looks and works great is our specialty at
         Sunrise. Our team of experts combines artistry and technical know-how to
         craft solutions that will make your business{" "}
@@ -42,20 +40,21 @@ const Hero = () => {
     </>
   );
 };
+
 const Services = () => {
   const Services = [
     {
       id: 1,
       icon: "web.svg",
-      borderColor: "border-[#F4A261]",
+      borderColor: "border-orange/20",
       title: "Websites",
       description:
-        "Fast. Responsive. Accessible. We specialize in building high-performing websites without leaving any users behind. ",
+        "Fast. Responsive. Accessible.\nWe specialize in building high-performing websites without leaving any users behind. ",
     },
     {
       id: 2,
       icon: "mobile.svg",
-      borderColor: "border-[#2A9D8F]",
+      borderColor: "border-green/20",
       title: "Mobile Apps",
       description:
         "We build cross-platform mobile apps. Lorem ipsum dolor sit amet consectetur adipiscing elit.",
@@ -63,7 +62,7 @@ const Services = () => {
     {
       id: 3,
       icon: "design.svg",
-      borderColor: "border-[#E76F51]",
+      borderColor: "border-red/20",
       title: "UI/UX Design",
       description:
         "First impressions matter. We know how to craft unique and impressive digital experiences.",
@@ -71,10 +70,10 @@ const Services = () => {
   ];
 
   return (
-    <div className=" my-10 bg-[#F0D4B2]">
-      <div className="container mx-auto">
+    <div className="my-10 bg-sand">
+      <Container>
         <div>
-          <h2 className="text-center text-[32px] font-extrabold sm:text-left sm:text-[40px]">
+          <h2 className="text-center font-extrabold text-r-2xl sm:text-left">
             What we can do for you
           </h2>
         </div>
@@ -84,19 +83,57 @@ const Services = () => {
               key={data.id}
               className="my-2 flex w-full flex-col items-center justify-start sm:w-1/3"
             >
-              <img src={`icons/${data.icon}`} alt="service-icon" />
-              <h3 className="text-[32px] font-semibold">{data.title}</h3>
+              <Image
+                src={`icons/${data.icon}`}
+                alt="service-icon"
+                width={150}
+                height={150}
+              />
+              <h3 className="font-semibold text-r-xl">{data.title}</h3>
               <div className={`my-5 w-3/4 border-2 ${data.borderColor}`} />
-              <p className="w-3/4 text-center text-[20px] ">
-                {data.description}
-              </p>
+              {data.description.split("\n").map((line) => (
+                <p key={line} className="w-3/4 text-center text-r-base">
+                  {line}
+                </p>
+              ))}
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </div>
   );
 };
-// const Projects = () => {}
+
+const Projects = () => {
+  return (
+    <Container>
+      <h2 className="my-10 text-center font-extrabold text-black text-r-2xl md:mt-16">
+        Here are some of our past projects
+      </h2>
+      <div className="pb-20 [&>*:nth-child(odd)]:md:flex-row">
+        {projects.map((p) => (
+          <div
+            key={p.title}
+            className="mb-10 flex flex-col items-center gap-x-12 gap-y-6 md:flex-row-reverse lg:my-0"
+          >
+            <div>
+              <Polaroid
+                title={p.title}
+                imageSrc={p.imageSrc}
+                rotation={p.rotation}
+              />
+            </div>
+            <div>
+              <ProjectDescription title={p.title} color={p.color}>
+                {p.children}
+              </ProjectDescription>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  );
+};
+
 // const About = () => {}
 // const Contact = () => {}
