@@ -36,6 +36,7 @@ export default {
         orange: "#F4A261",
         red: "#E76F51",
         white: "#EAD9C2",
+        sand: "#F0D4B2",
         black: "#2E251E",
       },
     },

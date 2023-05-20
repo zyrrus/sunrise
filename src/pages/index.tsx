@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { Container } from "~/components/Container";
 import { Polaroid } from "~/components/Polaroid";
 import { ProjectDescription } from "~/components/ProjectDescription";
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
       </Head>
       <>
         <Hero />
-        {/* <Services /> */}
+        <Services />
         <Projects />
         {/* <About /> */}
         {/* <Contact /> */}
@@ -40,7 +41,68 @@ const Hero = () => {
   );
 };
 
-// const Services = () => {}
+const Services = () => {
+  const Services = [
+    {
+      id: 1,
+      icon: "web.svg",
+      borderColor: "border-orange/20",
+      title: "Websites",
+      description:
+        "Fast. Responsive. Accessible.\nWe specialize in building high-performing websites without leaving any users behind. ",
+    },
+    {
+      id: 2,
+      icon: "mobile.svg",
+      borderColor: "border-green/20",
+      title: "Mobile Apps",
+      description:
+        "We build cross-platform mobile apps. Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+    },
+    {
+      id: 3,
+      icon: "design.svg",
+      borderColor: "border-red/20",
+      title: "UI/UX Design",
+      description:
+        "First impressions matter. We know how to craft unique and impressive digital experiences.",
+    },
+  ];
+
+  return (
+    <div className="my-10 bg-sand">
+      <Container>
+        <div>
+          <h2 className="text-center font-extrabold text-r-2xl sm:text-left">
+            What we can do for you
+          </h2>
+        </div>
+        <div className="flex flex-col sm:flex-col md:flex-row">
+          {Services.map((data) => (
+            <div
+              key={data.id}
+              className="my-2 flex w-full flex-col items-center justify-start sm:w-1/3"
+            >
+              <Image
+                src={`icons/${data.icon}`}
+                alt="service-icon"
+                width={150}
+                height={150}
+              />
+              <h3 className="font-semibold text-r-xl">{data.title}</h3>
+              <div className={`my-5 w-3/4 border-2 ${data.borderColor}`} />
+              {data.description.split("\n").map((line) => (
+                <p key={line} className="w-3/4 text-center text-r-base">
+                  {line}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  );
+};
 
 const Projects = () => {
   return (
