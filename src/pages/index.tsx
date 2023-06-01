@@ -66,14 +66,14 @@ const Hero = () => {
 const Projects = () => {
   return (
     <Container component="section">
-      <h2 className="text-center text-4xl font-extrabold text-black">
+      <h2 className="my-10 text-center font-extrabold text-black text-r-2xl md:mt-16">
         Here are some of our past projects
       </h2>
-      <div className="py-20 [&>*:nth-child(odd)]:md:flex-row">
+      <div className="pb-20 [&>*:nth-child(odd)]:md:flex-row">
         {projects.map((p) => (
           <div
             key={p.title}
-            className="my-20 flex flex-col items-center gap-x-12 gap-y-6 md:my-0 md:flex-row-reverse"
+            className="mb-10 flex flex-col items-center gap-x-12 gap-y-6 md:flex-row-reverse lg:my-0"
           >
             <div>
               <Polaroid

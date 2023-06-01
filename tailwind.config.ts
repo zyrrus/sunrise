@@ -9,6 +9,15 @@ export default {
         center: true,
         padding: "1.5rem",
       },
+      fontSize: {
+        xs: ["0.875rem", { lineHeight: "1rem" }], // 14px 0.875rem
+        sm: ["1rem", { lineHeight: "1.25rem" }], // 16px 1rem
+        base: ["1.25rem", { lineHeight: "1.5rem" }], // 20px 1.25rem
+        lg: ["1.5rem", { lineHeight: "1.75rem" }], // 24px 1.5rem
+        xl: ["2rem", { lineHeight: "1.75rem" }], // 32px 2rem
+        "2xl": ["2.5rem", { lineHeight: "2rem" }], // 40px 2.5rem
+        "3xl": ["3rem", { lineHeight: "2.25rem" }], // 48px 3rem
+      },
       fontFamily: {
         sans: ["var(--font-jakarta)"],
         roadster: ["var(--font-roadster)", ...fontFamily.sans],
