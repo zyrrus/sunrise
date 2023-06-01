@@ -25,5 +25,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("./src/styles/responsiveTextPlugin.ts"),
+    require("./src/styles/pixelPerfectScalingPlugin.ts"),
+  ],
 } satisfies Config;

@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { Container } from "~/components/Container";
 import { Polaroid } from "~/components/Polaroid";
 import { ProjectDescription } from "~/components/ProjectDescription";
@@ -29,13 +30,33 @@ export default Home;
 const Hero = () => {
   return (
     <>
-      <h1 className="py-3 font-roadster text-5xl text-black">Sunrise</h1>
-      <p className="leading-relaxed text-black">
-        Creating software that looks and works great is our specialty at
-        Sunrise. Our team of experts combines artistry and technical know-how to
-        craft solutions that will make your business{" "}
-        <span className="font-semibold text-orange">shine</span>.
-      </p>
+      <div className="absolute min-h-full w-full">
+        <div className="absolute mt-[20vh] h-[17vh] w-full">
+          <Image
+            src="/images/ribbon.webp"
+            alt="Sunrise background banner"
+            className="scale-pixelated"
+            fill
+          />
+          {/* TODO: Create + replace with .svg */}
+          <Image
+            src="/images/sunrise-display.png"
+            alt="Sunrise Software"
+            className="object-contain py-2"
+            fill
+          />
+        </div>
+        <Container component="section">
+          <h1 className="py-3 font-roadster text-5xl text-black">Sunrise</h1>
+          <p className="leading-relaxed text-black lg:text-xl">
+            Creating software that looks and works great is our specialty at
+            Sunrise. Our team of experts combines artistry and technical
+            know-how to craft solutions that will make your business{" "}
+            <span className="font-semibold text-orange">shine</span>.
+          </p>
+        </Container>
+      </div>
+      <div className="h-screen" />
     </>
   );
 };
@@ -44,7 +65,7 @@ const Hero = () => {
 
 const Projects = () => {
   return (
-    <Container>
+    <Container component="section">
       <h2 className="text-center text-4xl font-extrabold text-black">
         Here are some of our past projects
       </h2>
