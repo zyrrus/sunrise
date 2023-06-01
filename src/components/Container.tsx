@@ -1,5 +1,11 @@
-import type { PropsWithChildren } from "react";
+import React, { type PropsWithChildren } from "react";
 
-export const Container: React.FC<PropsWithChildren> = ({ children }) => {
-  return <div className="container">{children}</div>;
+interface Props extends PropsWithChildren {
+  component?: keyof React.ReactHTML; // | React.ReactNode; ?
+}
+
+export const Container: React.FC<Props> = ({ component, children }) => {
+  const Comp = component ?? "div";
+
+  return <Comp className="container">{children}</Comp>;
 };

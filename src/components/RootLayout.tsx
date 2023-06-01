@@ -23,9 +23,7 @@ export const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Header />
-      <main
-        className={`${jakarta.variable} ${roadster.variable} min-h-screen bg-white font-sans`}
-      >
+      <main className={`${jakarta.variable} ${roadster.variable} font-sans`}>
         {children}
       </main>
       <Footer />
