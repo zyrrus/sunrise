@@ -19,7 +19,7 @@ export default {
         "3xl": ["3rem", { lineHeight: "2.25rem" }], // 48px 3rem
       },
       fontFamily: {
-        sans: ["var(--font-jakarta)"],
+        sans: ["var(--font-jakarta)", ...fontFamily.sans],
         roadster: ["var(--font-roadster)", ...fontFamily.sans],
       },
       colors: {
