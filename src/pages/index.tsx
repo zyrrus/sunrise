@@ -8,9 +8,22 @@ import { Container } from "~/components/Container";
 import { Polaroid } from "~/components/Polaroid";
 import { ProjectDescription } from "~/components/ProjectDescription";
 import { projects } from "~/constants/projects";
-import { MdArrowCircleDown } from "react-icons/md";
+import { MdArrowCircleDown, MdConstruction } from "react-icons/md";
+import { toast } from "react-hot-toast";
 
 const Home: NextPage = () => {
+  // Show toast message to indicate that we're under development
+  useEffect(() => {
+    toast(
+      "Attention: Early Visitors!\n\nWe're currently in development mode, so please bear with us while we work hard to bring you an amazing experience.",
+      {
+        icon: <MdConstruction size="10rem" className="text-orange" />,
+        duration: Infinity,
+        className: "border-l-orange border-l-4",
+      }
+    );
+  }, []);
+
   return (
     <>
       <Head>

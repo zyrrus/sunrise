@@ -7,7 +7,7 @@ import "~/styles/globals.css";
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <RootLayout>
-      <Toaster position="top-center" />
+      <Toaster position="bottom-right" />
       <Component {...pageProps} />
     </RootLayout>
   );
